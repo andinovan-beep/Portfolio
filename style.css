@@ -68,6 +68,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
@@ -498,11 +499,18 @@ h1 {
   .header {
     top: 18px;
     width: min(92%, 520px);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .header::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-links {
+    min-width: max-content;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 6px;
   }
 
@@ -543,6 +551,7 @@ h1 {
   }
 
   .nav-links {
+    min-width: max-content;
     gap: 4px;
   }
 
