@@ -497,12 +497,22 @@ h1 {
   text-shadow: 0 8px 24px rgba(0, 0, 0, 0.58);
 }
 
+.product-list {
+  display: grid;
+  gap: clamp(24px, 4vw, 38px);
+}
+
 .product-card {
   display: grid;
   grid-template-columns: minmax(260px, 0.82fr) minmax(280px, 1fr);
   gap: clamp(20px, 4vw, 36px);
   align-items: center;
   text-align: left;
+}
+
+.product-card + .product-card {
+  padding-top: clamp(24px, 4vw, 38px);
+  border-top: 1px solid rgba(255, 215, 128, 0.24);
 }
 
 .product-image-link {
@@ -518,6 +528,15 @@ h1 {
   box-shadow:
     inset 0 0 26px rgba(255, 190, 70, 0.12),
     0 18px 38px rgba(0, 0, 0, 0.32);
+}
+
+.product-image-featured {
+  border-color: rgba(141, 86, 255, 0.58);
+  background: linear-gradient(145deg, rgba(30, 0, 78, 0.82), rgba(0, 132, 255, 0.26));
+  box-shadow:
+    inset 0 0 28px rgba(144, 82, 255, 0.2),
+    0 20px 44px rgba(16, 77, 255, 0.24),
+    0 16px 34px rgba(0, 0, 0, 0.32);
 }
 
 .product-image {
@@ -539,6 +558,15 @@ h1 {
   font-size: clamp(1.5rem, 3vw, 2.35rem);
   line-height: 1.08;
   text-shadow: 0 8px 24px rgba(0, 0, 0, 0.58);
+}
+
+.product-kicker {
+  margin-bottom: 8px;
+  color: #8fe6ff !important;
+  font-size: 0.82rem !important;
+  font-weight: 900;
+  line-height: 1.3 !important;
+  text-transform: uppercase;
 }
 
 .product-copy p,
@@ -584,6 +612,43 @@ h1 {
   font-weight: 800;
 }
 
+.product-promo {
+  display: grid;
+  gap: 4px;
+  color: #ff3030 !important;
+  font-weight: 900;
+}
+
+.product-promo span,
+.product-promo strong {
+  color: inherit;
+  font-weight: 900;
+}
+
+.product-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 10px;
+  color: #ff3030 !important;
+  font-weight: 900;
+}
+
+.product-price del {
+  color: rgba(255, 48, 48, 0.78);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  font-weight: 900;
+  text-decoration-thickness: 3px;
+}
+
+.product-price strong {
+  color: #ff3030;
+  font-size: clamp(1.45rem, 2.5vw, 2.1rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
 .product-cta,
 .payment-button,
 .payment-secondary {
@@ -611,6 +676,78 @@ h1 {
 .payment-button:hover,
 .payment-secondary:hover {
   transform: translateY(-3px);
+}
+
+.purchase-toast {
+  position: fixed;
+  left: clamp(16px, 4vw, 34px);
+  bottom: clamp(16px, 4vw, 30px);
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  width: min(calc(100% - 32px), 430px);
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 215, 128, 0.34);
+  border-radius: 18px;
+  color: var(--white);
+  background: linear-gradient(145deg, rgba(12, 9, 5, 0.88), rgba(91, 33, 0, 0.78));
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.4),
+    inset 0 0 22px rgba(255, 190, 70, 0.1);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(18px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.purchase-toast.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.purchase-toast-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #0a0703;
+  background: linear-gradient(180deg, #ffe06a, #ffb22f 58%, #f46b00);
+  box-shadow: 0 0 18px rgba(255, 178, 47, 0.38);
+  font-weight: 900;
+}
+
+.purchase-toast-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.purchase-toast strong {
+  color: var(--white);
+}
+
+.purchase-toast > span:last-child {
+  min-width: 0;
+  font-size: 0.94rem;
+  line-height: 1.35;
+}
+
+.purchase-toast a {
+  color: #8fe6ff;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .payment-page .nav-links a {
@@ -1536,12 +1673,39 @@ h1 {
     font-size: 0.95rem;
   }
 
+  .product-promo {
+    gap: 3px;
+  }
+
+  .product-price {
+    gap: 10px;
+  }
+
   .product-cta,
   .payment-button,
   .payment-secondary {
     width: 100%;
     min-height: 48px;
     margin-top: 14px;
+  }
+
+  .purchase-toast {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    grid-template-columns: 34px minmax(0, 1fr);
+    width: auto;
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .purchase-toast-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .purchase-toast > span:last-child {
+    font-size: 0.86rem;
   }
 
   .payment-main {
