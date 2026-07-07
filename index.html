@@ -201,12 +201,11 @@
               </ul>
 
               <p class="product-delivery product-promo">
-                <span>Masa promo berakhir dalam hitungan</span>
-                <strong data-promo-countdown>7 hari 00 jam 00 menit 00 detik</strong>
+                <span>Masa promo berakhir</span>
+                <strong data-promo-countdown>23:54:00</strong>
               </p>
               <p class="product-price" aria-label="Harga promo Tutorial Vibecoding">
-                <del>135.000</del>
-                <strong>99ribu</strong>
+                <strong>Hanya 99ribu</strong>
               </p>
               <a
                 class="product-cta"
@@ -334,7 +333,7 @@
       const purchaseName = document.querySelector("[data-purchase-name]");
       const purchaseNames = ["agusriandy", "ilhamgunz", "fikaaaaf", "justivan", "khairul"];
       const promoCountdown = document.querySelector("[data-promo-countdown]");
-      const promoEndsAt = new Date("2026-07-14T12:45:59+08:00").getTime();
+      const promoEndsAt = new Date("2026-07-08T12:46:36+08:00").getTime();
 
       if (promoCountdown) {
         const formatTwoDigits = (value) => String(value).padStart(2, "0");
@@ -343,16 +342,15 @@
           const distance = promoEndsAt - Date.now();
 
           if (distance <= 0) {
-            promoCountdown.textContent = "promo sudah berakhir";
+            promoCountdown.textContent = "00:00:00";
             return;
           }
 
-          const days = Math.floor(distance / 86400000);
-          const hours = Math.floor((distance % 86400000) / 3600000);
+          const hours = Math.floor(distance / 3600000);
           const minutes = Math.floor((distance % 3600000) / 60000);
           const seconds = Math.floor((distance % 60000) / 1000);
 
-          promoCountdown.textContent = `${days} hari ${formatTwoDigits(hours)} jam ${formatTwoDigits(minutes)} menit ${formatTwoDigits(seconds)} detik`;
+          promoCountdown.textContent = `${formatTwoDigits(hours)}:${formatTwoDigits(minutes)}:${formatTwoDigits(seconds)}`;
         };
 
         updatePromoCountdown();
