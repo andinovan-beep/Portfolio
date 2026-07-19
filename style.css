@@ -205,9 +205,11 @@ h1 {
 }
 
 .typing-title {
+  display: inline-block;
   max-width: max-content;
   overflow: hidden;
   white-space: nowrap;
+  text-align: left;
   border-right: 0.08em solid var(--gold);
   animation:
     typing-loop 5s steps(10, end) infinite,
@@ -222,7 +224,7 @@ h1 {
 
   42%,
   72% {
-    width: 10.8ch;
+    width: 12.6ch;
   }
 
   100% {
@@ -398,6 +400,46 @@ h1 {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.34);
 }
 
+.service-video-grid {
+  align-items: start;
+}
+
+.service-video-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-video-card:hover,
+.service-video-card:focus-visible {
+  border-color: rgba(255, 205, 102, 0.8);
+  box-shadow:
+    inset 0 0 26px rgba(255, 190, 70, 0.14),
+    0 16px 34px rgba(244, 107, 0, 0.24);
+  transform: translateY(-3px);
+}
+
+.service-video-card:focus-visible {
+  outline: 3px solid rgba(255, 205, 102, 0.64);
+  outline-offset: 4px;
+}
+
+.portfolio-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  max-height: 620px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.34);
+  pointer-events: none;
+}
+
 .ai-preview {
   position: relative;
 }
@@ -480,6 +522,13 @@ h1 {
   margin-bottom: 18px;
   color: var(--white);
   font-size: clamp(1.35rem, 2vw, 1.85rem);
+}
+
+.skill-card p {
+  margin-bottom: 18px;
+  color: var(--soft-white);
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .skill-list {
@@ -1586,15 +1635,20 @@ h1 {
   }
 
   .hero-content {
-    width: min(100%, 350px);
+    width: min(100%, 280px);
   }
 
   .typing-title {
     max-width: 100%;
+    width: auto;
+    white-space: normal;
+    text-align: center;
+    border-right: 0;
+    animation: none;
   }
 
   h1 {
-    font-size: clamp(2.2rem, 10vw, 2.6rem);
+    font-size: clamp(2rem, 8vw, 2.25rem);
     line-height: 1;
   }
 
@@ -1614,7 +1668,7 @@ h1 {
   }
 
   .cta {
-    width: 100%;
+    width: min(100%, 268px);
     min-height: 50px;
   }
 
@@ -1729,10 +1783,10 @@ h1 {
 
   .purchase-toast {
     left: 12px;
-    right: 12px;
+    right: auto;
     bottom: 12px;
     grid-template-columns: 34px minmax(0, 1fr);
-    width: auto;
+    width: min(calc(100% - 24px), 360px);
     padding: 12px;
     border-radius: 14px;
   }
