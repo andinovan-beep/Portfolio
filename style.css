@@ -999,7 +999,7 @@ h1 {
 
 .certificate-image {
   display: block;
-  width: min(100%, 1080px);
+  width: min(100%, 840px);
   max-width: 100%;
   height: auto;
   border-radius: 10px;
