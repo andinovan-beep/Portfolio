@@ -565,7 +565,9 @@ h1 {
   grid-template-columns: 1fr;
   gap: clamp(18px, 3vw, 30px);
   align-items: center;
-  width: min(92%, 1240px);
+  justify-items: center;
+  width: fit-content;
+  max-width: min(92%, 1240px);
   padding: clamp(24px, 4vw, 44px);
   overflow: hidden;
   border: 1px solid rgba(132, 255, 180, 0.34);
@@ -615,6 +617,9 @@ h1 {
 .certificate-frame {
   display: grid;
   place-items: center;
+  justify-self: center;
+  width: fit-content;
+  max-width: 100%;
   padding: 10px;
   border: 1px solid rgba(147, 255, 190, 0.34);
   border-radius: 18px;
@@ -628,9 +633,8 @@ h1 {
 
 .certificate-image {
   display: block;
-  width: auto;
+  width: min(100%, 1080px);
   max-width: 100%;
-  max-height: min(68vh, 760px);
   height: auto;
   border-radius: 10px;
   object-fit: contain;
@@ -1621,6 +1625,8 @@ h1 {
 
   .certificate-shell {
     grid-template-columns: 1fr;
+    width: fit-content;
+    max-width: min(94%, 680px);
     gap: 26px;
     text-align: center;
   }
@@ -1820,8 +1826,15 @@ h1 {
   }
 
   .certificate-frame {
+    width: fit-content;
+    max-width: 100%;
     padding: 6px;
     border-radius: 12px;
+  }
+
+  .certificate-shell {
+    width: fit-content;
+    max-width: calc(100% - 24px);
   }
 
   .certificate-image {
