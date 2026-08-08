@@ -8,25 +8,52 @@
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
     <link rel="stylesheet" href="style.css" />
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1629963348766439');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1629963348766439&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      fbq("init", "1629963348766439");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1629963348766439&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body>
-    <video class="bg-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
+    <video
+      class="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline
+      preload="auto"
+    >
       <source src="assets/video/1001128716.mp4" type="video/mp4" />
     </video>
     <div class="video-overlay"></div>
@@ -104,7 +131,10 @@ src="https://www.facebook.com/tr?id=1629963348766439&ev=PageView&noscript=1"
               preload="metadata"
               aria-label="Influencer content service video"
             >
-              <source src="assets/video/service-influencer.mp4" type="video/mp4" />
+              <source
+                src="assets/video/service-influencer.mp4"
+                type="video/mp4"
+              />
             </video>
             <h3>Influencer Content</h3>
             <p>
@@ -129,7 +159,10 @@ src="https://www.facebook.com/tr?id=1629963348766439&ev=PageView&noscript=1"
               preload="metadata"
               aria-label="Telegram attendance automation service video"
             >
-              <source src="assets/video/service-absensi-telegram.mp4" type="video/mp4" />
+              <source
+                src="assets/video/service-absensi-telegram.mp4"
+                type="video/mp4"
+              />
             </video>
             <h3>Absensi Otomatis</h3>
             <p>
@@ -148,17 +181,12 @@ src="https://www.facebook.com/tr?id=1629963348766439&ev=PageView&noscript=1"
         <div class="skills-grid">
           <article class="skill-card">
             <h3>Website</h3>
-            <p>
-              Building portfolio pages, landing pages, and content funnels with
-              AI-assisted coding.
-            </p>
+            <p>Building portfolio pages, landing pages, and content funnels</p>
             <ul class="skill-list">
-              <li>AI Prompting</li>
               <li>HTML</li>
               <li>CSS</li>
               <li>JavaScript</li>
               <li>Responsive UI</li>
-              <li>Instagram Funnel</li>
             </ul>
           </article>
 
@@ -173,7 +201,19 @@ src="https://www.facebook.com/tr?id=1629963348766439&ev=PageView&noscript=1"
               <li>Google Sheets</li>
               <li>Location Data</li>
               <li>API Workflow</li>
-              
+            </ul>
+          </article>
+
+          <article class="skill-card">
+            <h3>Audio Engineer</h3>
+            <p>
+              Producing, editing, and arranging audio with professional DAW
+              workflows.
+            </p>
+            <ul class="skill-list">
+              <li>FL Studio</li>
+              <li>Logic Pro X</li>
+              <li>PreSonus Studio One</li>
             </ul>
           </article>
         </div>
@@ -272,7 +312,6 @@ src="https://www.facebook.com/tr?id=1629963348766439&ev=PageView&noscript=1"
           link.addEventListener("click", () => setMenuOpen(false));
         });
       }
-
     </script>
   </body>
 </html>
